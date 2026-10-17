@@ -303,6 +303,7 @@ h1, h2, h3, h4, h5, p, li, blockquote, figcaption, small, label, legend { text-w
 .navbar__left { display: flex; align-items: center; gap: 40px; }
 .navbar__logo { display: block; flex: none; }
 .navbar__logo img { height: 40px; width: auto; }
+:lang(ka) .navbar__logo img { height: 46px; }
 .nav-menu { display: flex; align-items: center; gap: 4px; }
 .nav-link {
   display: inline-flex; align-items: center; gap: 6px;
@@ -591,6 +592,7 @@ h1, h2, h3, h4, h5, p, li, blockquote, figcaption, small, label, legend { text-w
 .footer__col li a:hover { opacity: 1; transform: translateX(3px); }
 .footer__bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; padding-top: 32px; border-top: 1px solid var(--_colors---ui--light-border); }
 .footer__logo img { width: 280px; height: auto; }
+:lang(ka) .footer__logo img { width: 360px; }
 .footer__legal { display: flex; flex-wrap: wrap; gap: 8px 24px; font-family: var(--_typography---typefaces--badges); font-size: 12px; text-transform: uppercase; letter-spacing: .02em; opacity: .7; }
 .footer__legal a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
@@ -672,6 +674,7 @@ h1, h2, h3, h4, h5, p, li, blockquote, figcaption, small, label, legend { text-w
   }
   .navbar__inner { padding: 0 16px; }
   .navbar__logo img { height: 34px; }
+  :lang(ka) .navbar__logo img { height: 40px; }
   .hero__card .badge { margin-bottom: 20px; }
   .hero__card h1, .hero__card .lead { margin-bottom: 24px; }
   .hero__inner { padding-bottom: 16px; gap: 12px; }
@@ -701,6 +704,7 @@ h1, h2, h3, h4, h5, p, li, blockquote, figcaption, small, label, legend { text-w
   .footer__cols { grid-template-columns: 1fr 1fr; }
   .footer__bottom { flex-direction: column; align-items: flex-start; }
   .footer__logo img { width: 200px; }
+  :lang(ka) .footer__logo img { width: 260px; }
   .cta-banner { min-height: 540px; }
   .cta-banner__inner { padding-bottom: 40px; }
   .button { padding: 0 28px; }
