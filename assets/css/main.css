@@ -18,6 +18,11 @@
 @font-face { font-family: "Geist Mono"; src: url(../fonts/geist-mono-cyrillic.woff2) format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
 @font-face { font-family: "Geist Mono"; src: url(../fonts/geist-mono-cyrillic-ext.woff2) format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }
 
+/* Georgian: none of the brand fonts have Georgian glyphs, so Georgian pages fall back to Noto Sans Georgian per glyph (Latin stays in Funnel Sans / Geist Mono) */
+@font-face { font-family: "Noto Sans Georgian"; src: url(../fonts/noto-sans-georgian.woff2) format("woff2"); font-weight: 300 800; font-style: normal; font-display: swap; unicode-range: U+0589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31; }
+/* Label variant also claims the space: Geist Mono's monospace space is too wide between Georgian words */
+@font-face { font-family: "Noto Sans Georgian Label"; src: url(../fonts/noto-sans-georgian.woff2) format("woff2"); font-weight: 300 800; font-style: normal; font-display: swap; unicode-range: U+0020, U+0589, U+10A0-10FF, U+1C90-1CBA, U+1CBD-1CBF, U+205A, U+2D00-2D2F, U+2E31; }
+
 :root {
   /* Colors */
   --_colors---ui--light-1: #f8f6f0;
@@ -91,6 +96,11 @@
 :lang(uk) {
   --_typography---typefaces--body: "Onest", Arial, sans-serif;
   --_typography---typefaces--headings: "Onest", Arial, sans-serif;
+}
+:lang(ka) {
+  --_typography---typefaces--body: "Funnel Sans", "Noto Sans Georgian", Arial, sans-serif;
+  --_typography---typefaces--headings: "Funnel Sans", "Noto Sans Georgian", Arial, sans-serif;
+  --_typography---typefaces--badges: "Noto Sans Georgian Label", "Geist Mono", "Trebuchet MS", monospace;
 }
 
 /* ---------- Base ---------- */
@@ -1078,6 +1088,7 @@ h1, h2, h3, h4, h5, p, li, blockquote, figcaption, small, label, legend { text-w
 }
 @media (max-aspect-ratio: 1 / 1) {
   .hero__media video { object-position: 57% 50%; }   /* portrait screens: keep the middle bridge tower in frame */
+  .hero__media img { object-position: 52% 50%; }     /* Tbilisi hero: keep the balcony houses + Narikala in frame */
 }
 @media (max-width: 991px) {
   .gallery__grid.is-filtered { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 280px; }

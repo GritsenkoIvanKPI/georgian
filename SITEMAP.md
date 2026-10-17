@@ -3,7 +3,7 @@
 Status: ✅ built · ⏳ planned (already linked from nav/footer on the homepage)
 
 ```
-/                                   ✅ Головна (index.html, українською) · German version kept as index.de.html
+/                                   ✅ Головна (index.html, грузинською – ринок Тбілісі) · German version kept as index.de.html
 /leistungen/badsanierung/                    ⏳
     demontage-entsorgung/                    ⏳ Demontage & Entsorgung (incl. Schutz-/Vorbereitungsarbeiten)
     sanitaer-rohinstallation/                ⏳ Sanitär-Rohinstallation (Wasserpunkte, Vorwand, opt. bodengleiche Dusche)
@@ -11,6 +11,7 @@ Status: ✅ built · ⏳ planned (already linked from nav/footer on the homepage
     fliesenarbeiten/                         ⏳ Abdichtung & Fliesen (Fuge/Epoxid, Silikon)
     endmontage/                              ⏳ Endmontage Sanitär (Waschtisch nach Körpergröße, Spiegel, WC/Bidet/Wanne, Dusche)
 /leistungen/wohnungsrenovierung/             ⏳
+    karkasi/                                 ⏳ Ремонт із чорного/білого каркаса (новобудови Тбілісі)
     demontage-entsorgung/                    ⏳
     trockenbau/                              ⏳ Wände, Decken, Vorsatzschalen, Wärme-/Schalldämmung
     elektroarbeiten/                         ⏳ Planung, Schlitze, Kabelwege, Dosen — Hinweis: Anschluss durch Elektro-Fachbetrieb
@@ -32,6 +33,8 @@ Status: ✅ built · ⏳ planned (already linked from nav/footer on the homepage
 Subpages for Boden-, Maler- and Sanitärarbeiten are proposals; the brief only details Bad and Wohnung.
 
 ## Placeholders to replace before launch
+- Georgian (Tbilisi) version: phone/WhatsApp/Viber `+995 555 00 00 00`, email and domain still the Berlin ones, calculator rates in ₾ are estimates, "Impressum" links now labelled as company details (რეკვიზიტები)
+- Hero/CTA photos of Tbilisi are AI-generated (assets/img/hero-tbilisi*.webp, cta-tbilisi.webp)
 - Phone `+49 30 000 000 00`, email `info@multibau-berlin.de`, domain in `<link rel=canonical>` / JSON-LD
 - Google review on the homepage (sample text) → real Google Reviews widget (needs consent banner)
 - Project cards (titles, districts, photos) → real projects / before-after photos from client

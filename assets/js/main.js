@@ -169,17 +169,17 @@
   }
 
   /* ---------- Calculator ----------
-     ЗАГЛУШКА: орієнтовні ставки (€/м², лише роботи) – замінити реальними параметрами від клієнта */
+     ЗАГЛУШКА: орієнтовні ставки для Тбілісі (₾/м², лише роботи) – замінити реальними параметрами від клієнта */
   const CALC_RATES = {
-    bad:      { name: 'Ремонт ванної',      unit: 'Площа ванної кімнати', min: 2,  max: 20,  value: 6,  rate: [650, 950], minTotal: 3500 },
-    wohnung:  { name: 'Ремонт квартири',    unit: 'Площа квартири',       min: 20, max: 150, value: 60, rate: [160, 290], minTotal: 2500 },
-    boden:    { name: 'Роботи з підлогою',  unit: 'Площа підлоги',        min: 5,  max: 150, value: 30, rate: [28, 55],   minTotal: 600 },
-    maler:    { name: 'Малярні роботи',     unit: 'Площа стін і стель',   min: 10, max: 400, value: 80, rate: [18, 34],   minTotal: 500 },
-    sanitaer: { name: 'Сантехнічні роботи', unit: 'Площа ванної кімнати', min: 2,  max: 20,  value: 6,  rate: [380, 620], minTotal: 1800 },
+    bad:      { name: 'აბაზანის რემონტი',         unit: 'აბაზანის ფართობი', min: 2,  max: 20,  value: 6,  rate: [550, 850], minTotal: 2500 },
+    wohnung:  { name: 'ბინის რემონტი',            unit: 'ბინის ფართობი',        min: 20, max: 200, value: 70, rate: [140, 260], minTotal: 3000 },
+    boden:    { name: 'იატაკის სამუშაოები',       unit: 'იატაკის ფართობი',      min: 5,  max: 150, value: 30, rate: [20, 45],   minTotal: 400 },
+    maler:    { name: 'სამღებრო სამუშაოები',      unit: 'კედლებისა და ჭერის ფართობი', min: 10, max: 400, value: 80, rate: [12, 25],   minTotal: 400 },
+    sanitaer: { name: 'სანტექნიკური სამუშაოები', unit: 'აბაზანის ფართობი', min: 2,  max: 20,  value: 6,  rate: [300, 500], minTotal: 1500 },
   };
-  const LEVELS = { standard: ['Стандарт', 1], comfort: ['Комфорт', 1.2], premium: ['Преміум', 1.45] };
+  const LEVELS = { standard: ['სტანდარტი', 1], comfort: ['კომფორტი', 1.2], premium: ['პრემიუმი', 1.45] };
   const calc = document.querySelector('[data-calc]');
-  const fmt = new Intl.NumberFormat('uk-UA');
+  const fmt = new Intl.NumberFormat('ka-GE');
   if (calc) {
     const area = calc.querySelector('[data-area]');
     const q = (sel) => calc.querySelector(sel);
@@ -216,16 +216,16 @@
       const from = round(Math.max(svc.minTotal, m2 * svc.rate[0] * k));
       const to = round(Math.max(svc.minTotal * 1.3, m2 * svc.rate[1] * k));
       area.style.setProperty('--p', `${((m2 - svc.min) / (svc.max - svc.min)) * 100}%`);
-      q('[data-area-out]').textContent = `${m2} м²`;
+      q('[data-area-out]').textContent = `${m2} მ²`;
       animateNumber(q('[data-price-from]'), from);
       animateNumber(q('[data-price-to]'), to);
       const price = q('.calc__price');
       price.classList.remove('is-bump'); void price.offsetWidth; price.classList.add('is-bump');
       q('[data-sum-service]').textContent = svc.name;
-      q('[data-sum-area]').textContent = `${m2} м²`;
+      q('[data-sum-area]').textContent = `${m2} მ²`;
       q('[data-sum-level]').textContent = levelName;
-      q('[data-sum-materials]').textContent = data.get('materials') ? 'Враховано' : 'Не враховано';
-      calc.dataset.summary = `Розрахунок калькулятора: ${svc.name}, ${m2} м², рівень «${levelName}» – орієнтовно ${fmt.format(from)}–${fmt.format(to)} €.`;
+      q('[data-sum-materials]').textContent = data.get('materials') ? 'გათვალისწინებულია' : 'არ არის გათვალისწინებული';
+      calc.dataset.summary = `კალკულატორის გაანგარიშება: ${svc.name}, ${m2} მ², დონე „${levelName}“ – დაახლოებით ${fmt.format(from)}–${fmt.format(to)} ₾.`;
     };
     calc.addEventListener('input', update);
     calc.addEventListener('submit', (e) => e.preventDefault());
